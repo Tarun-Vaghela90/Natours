@@ -1,0 +1,20 @@
+//-
+extends base
+
+block content
+  main.main.login_body
+    .login-form
+      h2.heading-secondary.ma-bt-lg Log into your account
+      form.form.form--login(method='POST', action='/login') 
+        .form__group
+          label.form__label(for='email') Email address
+          input#email.form__input(type='email', placeholder='meow😻@example.com', required, name='email')
+        .form__group.ma-bt-md
+          label.form__label(for='password') Password
+          input#password.form__input(type='password', placeholder='•••••••••••', required, minlength='8', name='password')
+        .form__group
+          button.btn.btn--green(type='submit') Login
+
+      // 👉 Add this below the form
+      p.ma-top-sm
+        a(href='/forgotPassword') Forgot your password?

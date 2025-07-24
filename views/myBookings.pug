@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .section-header
+    h2.heading-secondary My Bookings
+
+  .bookings
+    if bookings.length
+      each booking in bookings
+        .booking-card
+          h3= booking.tour.name
+          p Booking ID: #{booking._id}
+          p Price: $#{booking.price}
+          p Paid: #{booking.paid ? 'Yes' : 'No'}
+          p Booked on: #{booking.createdAt.toDateString()}
+    else
+      p You have no bookings yet.

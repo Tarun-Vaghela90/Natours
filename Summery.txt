@@ -1,0 +1,9 @@
+mongodb aggregation
+mongoose  middleware
+error class
+security headers -  helmet, xss-clean , mongoSanitize
+mongoose  virtual
+pug for views
+file uploads
+factory  function to remove  duplicate  crud operation  logic
+nodemailer for emails

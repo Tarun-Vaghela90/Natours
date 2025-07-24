@@ -1,0 +1,45 @@
+//- base.pug
+doctype html
+html
+  head
+    // ✅ REQUIRED META TAGS
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+    // ✅ CONTENT SECURITY POLICY (CSP) - MUST BE IN <head>
+    meta(
+  http-equiv="Content-Security-Policy"
+  content="default-src 'self'; script-src 'self' https://unpkg.com https://js.stripe.com; style-src 'self' 'unsafe-inline' https://unpkg.com;"
+)
+
+
+    // ✅ STYLESHEETS
+    link(rel="stylesheet" href="/css/style.css")
+    link(rel="shortcut icon" href="/img/favicon.png" type="image/x-icon")
+    link(rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="")
+
+    // ✅ PAGE TITLE
+    title Natours | #{title}
+
+    // ✅ BLOCK FOR CHILD HEADS (OPTIONAL)
+    block head
+
+  body(data-alert=`${alert ? alert : ""}`)
+
+    // ✅ HEADER
+    include _header
+
+    // ✅ CONTENT PLACEHOLDER
+    block content
+      h1 This is a placeholder heading
+
+    // ✅ FOOTER
+    include _footer
+
+    // ✅ EXTERNAL SCRIPTS
+    script(src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="")
+    script(src="https://js.stripe.com/v3/")
+
+    // ✅ BUNDLED APP SCRIPT
+    script(src="/js/bundle.js")
+    script(type="module", src="/js/index.js")
